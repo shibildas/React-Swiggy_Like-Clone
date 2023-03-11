@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start":"parcel public/index.html", 
+    "start": "parcel public/index.html",
     "build": "parcel build public/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,9 +16,10 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.9.0"
   },
-  "browserslist":[
+  "browserslist": [
     "last 10 Firefox versions"
   ]
 }

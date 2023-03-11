@@ -1,49 +1,56 @@
-import { restaurantlist } from "../../constants"
+import { restaurantAPI } from "../../constants"
 import RestaurantCard from "../ResaurantCard/RestaurantCard"
-import { useEffect, useState } from "react"
+import { useEffect, useState} from "react"
+import Shimmer from "../Shimmer/Shimmer"
+import { Link } from "react-router-dom"
 
 function filterData(searchText, restaurants){
     return restaurants.filter((restaurant)=>
-        restaurant.data.data.name.includes(searchText)
-
+        restaurant?.data?.data?.name?.toLowerCase().includes(searchText.toLowerCase())
      )
-
 }
-
 const Body = ()=>{
-    const [restaurants, setResaurants] = useState(restaurantlist)
+    const [restaurants, setResaurants] = useState([])
+    const [filteredrestaurants, setFilteredResaurants] = useState([])
     const [searchText, setSearchText]= useState('')
 
     useEffect(()=>{
         //Should make API calls Here....
      getRestaurants();
     },[])
-
 async function getRestaurants(){
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.1525916&lng=75.8923806&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING")
-    const json = await data.json();
-    console.log(json);
-
+    try {     
+        const data = await fetch(restaurantAPI)
+        const json = await data.json();
+        setResaurants(json?.data?.cards)
+        setFilteredResaurants(json?.data?.cards)
+    } catch (error) {
+        console.error(error);       
+    }
 }
-
-    console.log("Render");   
-    return(
+   if(!restaurants) return null
+   
+    return (restaurants?.length ==0)? <Shimmer/>:(
         <>
-        <div className="search-container">
+        <div className="search-container" >
             <input type="text" className="search-input"
              placeholder="Search" value={searchText} 
              onChange={(e)=>{
              setSearchText(e.target.value)}}/>
-            <button className="search-Btn" onClick={()=>{
-             const data = filterData(searchText,restaurantlist)
-             setResaurants(data)
+            <button className="search-button" onClick={()=>{
+             const data = filterData(searchText,restaurants)
+             setFilteredResaurants(data)
+             
             }}>Search</button>
         </div>
-      <div className="restaurantlist">
+      <div className="restaurantlist" >
+          
         {
-            restaurants.map(restaurant=>{
-                return <RestaurantCard {...restaurant.data.data} key={restaurant.data.data.id}/>
-            })
+           
+            filteredrestaurants?.map(restaurant=>{
+                
+                return <Link to={"/restaurant/"+restaurant.data.data.id}><RestaurantCard {...restaurant.data.data} key={restaurant.data.data.id}/></Link> 
+           })
             
         }
       

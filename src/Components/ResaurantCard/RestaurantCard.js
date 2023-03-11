@@ -9,7 +9,7 @@ export default RestaurantCard = ({name,
     <div className="card">
       <img src={imageUrl+cloudinaryImageId} alt="" />
       <h2>{name}</h2>
-      <h3>{cuisines.join(", ")}</h3>
+      <h3>{cuisines?.join(", ")}</h3>
       <h4>Near {lastMileTravelString} </h4>
     </div>
   )
