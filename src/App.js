@@ -11,7 +11,6 @@ import Cart from "./Components/Cart/Cart";
 import RestaurantMenu from "./Components/RestaurantMenu/RestautantMenu";
 import Profile from "./Components/Profile/Profile";
 import Shimmer from "./Components/Shimmer/Shimmer.js";
-// import Instamart from "./Components/Instamart/Instamart";
 
 const Instamart = lazy(()=> import ("./Components/Instamart/Instamart"))
 const About = lazy(()=> import ("./Components/About/About"))

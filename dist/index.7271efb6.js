@@ -2950,7 +2950,6 @@ var _profile = require("./Components/Profile/Profile");
 var _profileDefault = parcelHelpers.interopDefault(_profile);
 var _shimmerJs = require("./Components/Shimmer/Shimmer.js");
 var _shimmerJsDefault = parcelHelpers.interopDefault(_shimmerJs);
-// import Instamart from "./Components/Instamart/Instamart";
 const Instamart = /*#__PURE__*/ (0, _react.lazy)(()=>require("ca4c37eb663cfca6"));
 _c = Instamart;
 const About = /*#__PURE__*/ (0, _react.lazy)(()=>require("2002a45998afa47f"));
@@ -2960,17 +2959,17 @@ const AppLayout = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headercomponentDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 22,
+                lineNumber: 21,
                 columnNumber: 1
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, "outlet", false, {
                 fileName: "src/App.js",
-                lineNumber: 24,
+                lineNumber: 23,
                 columnNumber: 1
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 26,
+                lineNumber: 25,
                 columnNumber: 1
             }, undefined)
         ]
@@ -2982,12 +2981,12 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 35,
+            lineNumber: 34,
             columnNumber: 9
         }, undefined),
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/App.js",
-            lineNumber: 36,
+            lineNumber: 35,
             columnNumber: 14
         }, undefined),
         children: [
@@ -2996,12 +2995,12 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(About, {}, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 21
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 40,
+                    lineNumber: 39,
                     columnNumber: 11
                 }, undefined),
                 children: [
@@ -3009,7 +3008,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                         path: "profile",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {}, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 43,
+                            lineNumber: 42,
                             columnNumber: 13
                         }, undefined)
                     }
@@ -3019,7 +3018,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 50,
+                    lineNumber: 49,
                     columnNumber: 13
                 }, undefined)
             },
@@ -3027,7 +3026,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/cart",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 55,
+                    lineNumber: 54,
                     columnNumber: 13
                 }, undefined)
             },
@@ -3035,7 +3034,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 60,
+                    lineNumber: 59,
                     columnNumber: 11
                 }, undefined)
             },
@@ -3043,7 +3042,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "restaurant/:id",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restautantMenuDefault.default), {}, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 65,
+                    lineNumber: 64,
                     columnNumber: 13
                 }, undefined)
             },
@@ -3053,12 +3052,12 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                     fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerJsDefault.default), {}, void 0, false, void 0, void 0),
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Instamart, {}, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 70,
+                        lineNumber: 69,
                         columnNumber: 46
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 70,
+                    lineNumber: 69,
                     columnNumber: 14
                 }, undefined)
             }
@@ -3070,7 +3069,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterP
     router: appRouter
 }, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 76,
+    lineNumber: 75,
     columnNumber: 13
 }, undefined));
 var _c, _c1, _c2;
