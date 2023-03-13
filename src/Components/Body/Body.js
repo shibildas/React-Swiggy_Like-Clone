@@ -3,17 +3,14 @@ import RestaurantCard from "../ResaurantCard/RestaurantCard"
 import { useEffect, useState} from "react"
 import Shimmer from "../Shimmer/Shimmer"
 import { Link } from "react-router-dom"
+import { filterData } from "../../Utils/useHelper"
+import useOnline from "../../Utils/useOnline"
 
-function filterData(searchText, restaurants){
-    return restaurants.filter((restaurant)=>
-        restaurant?.data?.data?.name?.toLowerCase().includes(searchText.toLowerCase())
-     )
-}
+
 const Body = ()=>{
     const [restaurants, setResaurants] = useState([])
     const [filteredrestaurants, setFilteredResaurants] = useState([])
     const [searchText, setSearchText]= useState('')
-
     useEffect(()=>{
         //Should make API calls Here....
      getRestaurants();
@@ -27,6 +24,11 @@ async function getRestaurants(){
     } catch (error) {
         console.error(error);       
     }
+}
+const offline = useOnline();
+
+if (offline){
+    return <h1>Offline, Please Check your internet Connection</h1>
 }
    if(!restaurants) return null
    
