@@ -1,6 +1,5 @@
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
-import "./App.css"
 import Body from "./Components/Body/Body";
 import Footer from "./Components/Footer/Footer";
 import Headercomponent from "./Components/Header/Headercomponent";

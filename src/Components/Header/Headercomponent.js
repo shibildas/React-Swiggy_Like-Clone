@@ -1,40 +1,43 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../../Utils/useOnline";
+import { logo } from "../assets/assets";
 
 const Title =()=> (
-  <div className="sample" key={"heading2"}>
-    <Link to="/"><img className="logo" src="https://www.pngfind.com/pngs/m/405-4050302_3-red-lion-just-eat-logo-png-transparent.png" alt="Logo" /></Link>
+  <div className="md:flex ">
+    <Link to="/"><img className="h-20 p-2 m-4" src={logo} alt="Logo" /></Link>
   </div>
   );
   
   export default HeaderComponent = ()=>{
     const [isLoggedIn, setIsLoggedIn]= useState(true)
-    const [view, setView]= useState(true)
     const isOnline= useOnline()
-  const title = "Just Eat"
+
     return (
-    <div className="header" style={{backgroundColor:"greenyellow"}}>
+    <div className="lg:flex justify-between bg-gradient-to-r from-indigo-500 to-pink-400 shadow-xl mt-0">
       <Title/>
-      {view && <h1>{title}</h1>}
-      <button onClick={()=>setView(!view)}>show / hide</button>
-    <div className="nav-items" key={"Nav"}>
-      <ul>
-        <Link to="/"><li>Home</li></Link>
+    <div className="py-10">
+      <ul class="text-xl font-bold flex space-x-3 lg:justify-between ">
+        <Link to="/">
+          <li className="p-2 first-letter:font-extrabold hover:bg-pink-600 hover:text-white">
+          Home</li></Link>
         <Link to="/about">
-          <li>About</li>
+          <li className="p-2 first-letter:font-extrabold hover:bg-pink-600 hover:text-white">About</li>
         </Link>
-        <Link to="/contact"><li>Contact</li></Link>
-        <Link to="/cart"><li>Cart</li></Link>
-        <Link to="/instamart"><li>Instamart</li></Link>
+        <Link to="/contact"><li className="p-2 first-letter:font-extrabold hover:bg-pink-600 hover:text-white ">Contact</li></Link>
+        <Link to="/cart"><li className="p-2 first-letter:font-extrabold hover:bg-pink-600 hover:text-white">Cart</li></Link>
+        <Link to="/instamart"><li className="p-2 first-letter:font-extrabold hover:bg-pink-600 hover:text-white" >Instamart</li></Link>
       </ul>
       
       </div>
-      <h1>{isOnline ? `⚫` : `🟢` }</h1>
-      {
-        isLoggedIn ? (<button onClick={()=> setIsLoggedIn(false)}>Logout</button>)
-         : (<button onClick={()=> setIsLoggedIn(true)}> Log In</button>)
 
-      }
+      <h1>{isOnline ? `⚫` : `😌` }</h1>
+      <div className="flex py-10 space-x-3 mr-3">
+      
+         <button className="p-2 w-20 first-letter:font-extrabold hover:bg-indigo-500 hover:text-white" onClick={()=> setIsLoggedIn(!isLoggedIn)}>{isLoggedIn ? "Logout" :"Login"}</button>
+        
+        
+      
+      </div>
     </div>);
   }

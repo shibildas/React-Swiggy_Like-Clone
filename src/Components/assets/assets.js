@@ -1,0 +1,1 @@
+export const logo ="https://www.pngfind.com/pngs/m/405-4050302_3-red-lion-just-eat-logo-png-transparent.png"

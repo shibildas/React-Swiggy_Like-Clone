@@ -1,5 +1,8 @@
 export default Footer = ()=>{
     return(
-      <h4>Footer</h4>
+      <div className="bg-gradient-to-r from-indigo-500 to-pink-400 h-96" >
+
+      
+      </div>
     )
   }

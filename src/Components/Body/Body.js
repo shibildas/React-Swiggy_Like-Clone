@@ -34,24 +34,24 @@ if (offline){
    
     return (restaurants?.length ==0)? <Shimmer/>:(
         <>
-        <div className="search-container" >
-            <input type="text" className="search-input"
+        <div className="p-5 bg-gradient-to-r from-indigo-500 to-pink-400 mt-4 mb-4 flex justify-center shadow-lg" >
+            <input type="text" className="rounded-2xl px-3 focus:bg-indigo-200"
              placeholder="Search" value={searchText} 
              onChange={(e)=>{
              setSearchText(e.target.value)}}/>
-            <button className="search-button" onClick={()=>{
+            <button className="p-3 bg-black rounded-2xl mx-2 text-white hover:bg-pink-600" onClick={()=>{
              const data = filterData(searchText,restaurants)
              setFilteredResaurants(data)
              
             }}>Search</button>
         </div>
-      <div className="restaurantlist" >
+      <div className="flex flex-wrap justify-around bg-gradient-to-r from-indigo-500 to-pink-400" >
           
         {
            
             filteredrestaurants?.map(restaurant=>{
                 
-                return <Link to={"/restaurant/"+restaurant.data.data.id}><RestaurantCard {...restaurant.data.data} key={restaurant.data.data.id}/></Link> 
+                return (restaurant.data.data.id && <Link key={restaurant?.data?.data?.id} to={"/restaurant/"+restaurant.data.data.id}><RestaurantCard {...restaurant.data.data} /></Link> )
            })
             
         }
